@@ -1,0 +1,80 @@
+  * {
+  	margin: 0;
+  	padding: 0;
+  	box-sizing: border-box;
+  }
+  
+  html {
+  	width: 100%;
+  	height: 100%;
+  	font-size: 16px;
+  }
+  
+  body {
+  	width: 100%;
+  	height: 100%;
+  	-moz-user-select: none;
+  	/*火狐*/
+  	/*禁止用户在页面选择文字*/
+  	-webkit-user-select: none;
+  	/*webkit浏览器*/
+  	-ms-user-select: none;
+  	/*IE10*/
+  	-khtml-user-select: none;
+  	/*早期浏览器*/
+  	user-select: none;
+  }
+  
+  .code {
+  	width: 280px;
+  	margin-top: 8px;
+  }
+  
+  .input-val {
+  	width: 165px;
+  	background: #ffffff;
+  	height: 2.8rem;
+  	padding: 0 2%;
+  	border-radius: 5px;
+  	border: none;
+  	border: 1px solid rgba(0, 0, 0, .2);
+  	font-size: 12px;
+  	outline: none;
+  }
+  
+  .input-register {
+  	width: 165px !important;
+  	background: #ffffff;
+  	height: 40px;
+  	border-radius: 5px;
+  	border: 1px solid #DCDFE6;
+  	font-size: 12px;
+  	outline: none;
+  	font-family: "微软雅黑";
+  	font-size: 15px;
+  }
+  
+  .input-register:focus {
+  	border: 1px solid #FFDE37;
+  }
+  
+  #canvas {
+  	float: right;
+  	display: inline-block;
+  	border: 1px solid #ccc;
+  	border-radius: 5px;
+  	cursor: pointer;
+  }
+  
+  .btn {
+  	width: 100px;
+  	height: 40px;
+  	background: #f1f1f1;
+  	border: 1px solid #ccc;
+  	border-radius: 5px;
+  	margin: 20px auto 0;
+  	display: block;
+  	font-size: 1.2rem;
+  	color: #e22e1c;
+  	cursor: pointer;
+  }

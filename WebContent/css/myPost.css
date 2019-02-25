@@ -1,0 +1,217 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.mypost_nav{
+	width: 880px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #1F415F;
+	margin: auto;
+	margin-top: 10px;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+.mypost_body{
+	width: 878px;
+	min-height: 40px;
+	border: 1px solid #D1DCCE;
+	margin: auto;
+	margin-top: 10px;
+}
+.mypost_body .mypost_body_son{
+	width: 840px;
+	height: 40px;
+	line-height: 40px;
+	margin: auto;
+	border-bottom: 1px dashed #CCC;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1){
+	width: 500px;
+	height: 40px;
+	float: left;
+	margin-left: 5px;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .left{
+	float: left;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .right{
+	float: left;
+	margin-left: 5px;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .ba_a{
+	color: #2D64B3;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .Post_a{
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	color: #2D64B3;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .Post_a:visited{
+	color: #800080;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(1) .Reply{
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #666666;
+	float: right;
+	position: relative;
+	left: -30px;
+}
+.mypost_body .mypost_body_son .mypost_body_son_child:nth-child(2){
+	width: 60px;
+	height: 40px;
+	float: right;
+	text-align: center;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #7F7F7F;
+}
+.mypost_body .mypost_body_bottom{
+	width: 720px;
+	height: 40px;
+	line-height: 40px;
+	margin:auto;
+	text-align: center;
+	font-size: 14px;
+}
+.mypost_body .mypost_body_bottom .left{
+	width: 350px;
+	height: 40px;
+	float: left;
+	margin-left: 130px;
+}
+.mypost_body .mypost_body_bottom .right{
+	width: 180px;
+	height: 40px;
+	float: left;
+	margin-left: -20px;
+}
+nav{
+	display: block;
+}
+nav .pagination{
+	display: inline-block;
+    padding-left: 0;
+    margin: 3px 10px 3px 10px;
+    border-radius: 4px;
+}
+nav .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover{
+	color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+nav .pagination>li{
+	display: inline;
+}
+nav .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337AB7;
+    border-color: #337AB7;
+}
+nav .pagination>li>a, .pagination>li>span{
+	position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.sr-only{
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.footer{
+	width: 100%;
+	height: 120px;
+	background-color: #1F415F;
+	position: fixed;
+	bottom: 0;
+}
+.footer-son{
+	width: 850px;
+	height: 120px;
+	margin: auto;
+}
+.footer-son-left{
+	width: 250px;
+	height: 120px;
+	float: left;
+}
+.footer-son-left-son{
+	width: 249px;
+	height: 100px;
+	margin-top: 10px;
+	border-right: 1px solid #FFFFFF;
+}
+.footer-son-left-son-child{
+	width: 249px;
+	height: 15px;
+	line-height: 15px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 1.6px;
+}
+.footer-son-center{
+	width: 250px;
+	height: 120px;
+	float: left;
+}
+.footer-son-center-son{
+	width: 249px;
+	height: 100px;
+	margin-top: 10px;
+	border-right: 1px solid #FFFFFF;
+}
+.footer-son-center-son-child{
+	width: 249px;
+	height: 15px;
+	line-height: 15px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	text-align: center;
+	color: #FFFFFF;
+	margin-top: 6px;
+}
+.footer-son-right{
+	width: 350px;
+	height: 120px;
+	float: left;
+}
+.footer-son-right-son{
+	width: 300px;
+	height: 100px;
+	margin: auto;
+	margin-top: 10px;
+}
+.footer-son-right-son-child{
+	width: 300px;
+	height: 100px;
+	font-size: 12px;
+	font-family: "微软雅黑";
+	color: #FFFFFF;
+	text-indent: 2em;
+	margin-top: 17px;
+}

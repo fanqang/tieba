@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.PostDao">
+	<!--通过id编号查询贴吧信息 -->
+	<select id="SelectBar" parameterType="int" resultType="Bar">
+		SELECT * from bar WHERE bar_id = #{bar_id}
+	</select>
+	<!-- 插入贴吧数据 -->
+	<select id="InsertBar">
+		INSERT INTO bar (bar_name,img_url) VALUES (#{bar_name},#{img_url})
+	</select>
+	<!-- 根据贴吧id编号更新贴吧信息 -->
+	<select id="UpdateBarById">
+		UPDATE bar SET bar_name = #{bar_name},img_url = #{img_url} WHERE bar_id = #{bar_id}
+	</select>
+	<!--总条数 -->
+	<select id="SelectMyPostCount" parameterType="QueryCdt" resultType="int">
+		SELECT COUNT(*) FROM mypost WHERE bar_id = #{bar_id}
+	</select>
+	<!-- 添加回复数量到结果集 -->
+	<resultMap id="MyPostMap" type="MyPost">
+	 	<id column="post_id" property="post_id" />
+	  	<result column="bar_id" property="bar_id"/>
+	  	<result column="user_id" property="user_id"/>
+	  	<result column="text_title" property="text_title"/>
+	  	<result column="text_content" property="text_content"/>
+	  	<result column="time" property="time"/>
+	  	<association property="reply_count" javaType="int" column="post_id" select="dao.PostDao.SelectCommentCountByPostId">
+	  	</association>
+	</resultMap>
+	<!--结果集-->
+	<select id="SelectMyPostByIdList" parameterType="QueryCdt" resultMap="MyPostMap">
+		SELECT user_name,mypost.post_id,mypost.bar_id,mypost.user_id,mypost.text_title,mypost.text_content,mypost.img_url,mypost.time from mypost,`user` WHERE mypost.user_id = `user`.user_id AND mypost.bar_id = #{bar_id} ORDER BY mypost.time DESC LIMIT #{startRow},#{size}
+	</select>
+	<!--帖子回复数量-->
+	<select id="SelectCommentCountByPostId" parameterType="int" resultType="int">
+		SELECT COUNT(*) FROM `comment` WHERE post_id = #{post_id}
+	</select>
+	<!--插入发帖的信息 -->
+	<select id="AddPost" resultType="MyPost">
+		INSERT INTO mypost (bar_id,text_title,text_content,img_url,user_id,time) VALUES (#{bar_id},#{text_title},#{text_content},#{img_url},#{user_id},#{time})
+	</select>
+	<!--根据贴吧页面post_id编号查询帖子信息 -->
+	<select id="SelectMyPostByPostId" parameterType="int" resultType="MyPost">
+		SELECT * FROM mypost WHERE post_id = #{post_id}
+	</select>
+	<!--查询帖子回复信息list-->
+	<select id="SelectCommentByPostIdList" parameterType="int" resultType="Comment">
+		SELECT * from `comment` WHERE post_id = #{post_id}
+	</select>
+	<!--插入回复帖子的信息-->
+	<select id="InsertComment" resultType="object">
+		INSERT INTO `comment` (bar_id,post_id,text_content,user_id,image_url,time) VALUES (#{bar_id},#{post_id},#{text_content},#{user_id},#{image_url},#{time})
+	</select>
+	<!-- 插入子回复的信息 -->
+	<select id="InsertSonComment" resultType="object">
+		INSERT INTO son_comment (son_comment_content,comment_id,user_id,post_id,bar_id,reply_id,time) VALUES (#{son_comment_content},#{comment_id},#{user_id},#{post_id},#{bar_id},#{reply_id},#{time})
+	</select>
+	<!-- 根据回复的编号查询子回复集合 -->
+	<select id="SelectSonCommentByCommentId" parameterType="int" resultType="SonComment">
+		SELECT * from son_comment WHERE comment_id = #{comment_id}
+	</select>
+	<!-- 删除子回复 -->
+	<select id="DeleteSonCommentBySonCommenId" parameterType="int">
+		DELETE FROM son_comment WHERE son_comment_id = #{son_comment_id}
+	</select>
+	<!--根据用户id查询当前登录用户发布帖子的总条数 -->
+	<select id="SelectMypostByUserIdCount" parameterType="QueryCdt" resultType="int" >
+		SELECT COUNT(*) FROM bar,mypost WHERE bar.bar_id = mypost.bar_id AND mypost.user_id = #{user_id}
+	</select>
+	<!--根据登录保存的用户对象id查询用户发布帖子的结果集 -->
+	<select id="SelectMyPostByUserId" parameterType="QueryCdt" resultType="MyPost" >
+		SELECT bar.bar_id,bar.bar_name,mypost.text_title,mypost.time,mypost.post_id FROM bar,mypost WHERE mypost.user_id = #{user_id} AND mypost.bar_id = bar.bar_id ORDER BY mypost.time DESC LIMIT #{startRow},#{size}
+	</select>
+	<!-- 查询用户回复帖子的总条数 -->
+	<select id="SelectCommentCountByUserId" parameterType="QueryCdt" resultType="int">
+		SELECT COUNT(*) FROM `comment` WHERE  user_id = #{user_id}
+	</select>
+	<!-- 添加回复数量到回复帖子结果集 -->
+	<resultMap id="CommentMap" type="Comment">
+		<id column="comment_id" property="comment_id" />
+	  	<result column="post_id" property="post_id"/>
+	  	<result column="bar_id" property="bar_id"/>
+	  	<result column="user_id" property="user_id"/>
+	  	<result column="text_content" property="text_content"/>
+	  	<result column="imageurl" property="imageurl"/>
+	  	<result column="time" property="time"/>
+	  	<association property="reply_count" javaType="int" column="post_id" select="dao.PostDao.SelectCommentCountByPostId">
+	  	</association>
+	</resultMap>
+	<!--根据登录保存的用户对象id查询回复帖子的结果集-->
+	<select id="SelectCommentList" parameterType="QueryCdt" resultMap="CommentMap">
+		SELECT bar.bar_name,mypost.text_title,`comment`.text_content,`comment`.time,`comment`.post_id,`comment`.bar_id FROM bar,mypost,`comment` WHERE mypost.post_id = `comment`.post_id AND bar.bar_id = mypost.bar_id AND mypost.bar_id = `comment`.bar_id AND `comment`.user_id = #{user_id} ORDER BY `comment`.time DESC LIMIT #{startRow},#{size} 
+	</select>
+</mapper>

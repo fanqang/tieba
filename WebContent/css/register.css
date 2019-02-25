@@ -1,0 +1,121 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #CFDEEC;
+}
+
+.register-main {
+	width: 350px;
+	height: 470px;
+	background-color: #FFFFFF;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -175px;
+	margin-top: -235px;
+	border-radius: 10px;
+}
+
+.register-main .register-title {
+	width: 300px;
+	height: 90px;
+	line-height: 90px;
+	margin: auto;
+	font-family: "微软雅黑";
+	font-size: 25px;
+	text-align: center;
+}
+
+.register-main .register-son {
+	width: 300px;
+	height: 40px;
+	margin: auto;
+}
+
+.register-main .register-son input {
+	width: 300px;
+	height: 40px;
+	text-indent: 1em;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	outline: none;
+	border-radius: 5px;
+	border: 1px solid #DCDFE6;
+}
+
+.register-main .register-son input:focus {
+	border: 1px solid #FFDE37;
+}
+
+.register-main .register-son input::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #CCCCCC;
+}
+
+.register-main .register-son input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #CCCCCC;
+}
+
+.register-main .register-son input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #CCCCCC;
+}
+
+.register-main .register-son input:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #CCCCCC;
+}
+
+.register-btn {
+	width: 300px;
+	height: 40px;
+	text-align: center;
+	background-color: #717AED;
+	border: 0;
+	border-radius: 5px;
+	outline: none;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.register-btn:hover {
+	background-color: #DD05E4;
+	color: #000000;
+}
+
+.login-btn {
+	width: 300px;
+	height: 40px;
+	text-align: center;
+	background-color: #EAFAEC;
+	border: 0;
+	border-radius: 5px;
+	outline: none;
+	color: #000000;
+	margin-top: 15px;
+	cursor: pointer;
+}
+
+.login-btn:hover {
+	background-color: pink;
+	color: #FFFFFF;
+}
+.register-main .register-span-son{
+	width: 300px;
+	height: 25px;
+	margin: auto;
+}
+.register-main span {
+	width: 300px;
+	height: 25px;
+	line-height: 25px;
+	display: block;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	display: none;
+	color: red;
+}

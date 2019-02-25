@@ -1,0 +1,254 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.mask{
+	position: fixed;
+	z-index: 1001;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+}
+.nav-title{
+	width: 1080px;
+	height: 100px;
+	line-height: 150px;
+	margin: auto;
+	margin-top: 80px;
+	border-bottom: 1px solid #757575;
+	font-family: "微软雅黑";
+	font-size: 35px;
+	color: #F5F5F5;
+}
+.user-List{
+	width: 1080px;
+	height: 50px;
+	line-height: 50px;
+	border-left: 1px solid #757575;
+	border-top: 1px solid #757575;
+	border-right: 1px solid #757575;
+	margin: auto;
+	margin-top: 30px;
+	color: #F5F5F5;
+	text-indent: 1em
+}
+table{
+	width: 1080px;
+	min-height: 50px;
+	border: 1px solid #757575;
+	border-collapse: collapse;
+	margin: auto;
+	table-layout: fixed;
+}
+
+table th{
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	color: #FFFFFF;
+}
+table tr td{
+	width: 180px;
+	height: 50px;
+	text-align: center;
+	color: #FFFFFF;
+	word-break: keep-all;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.modify-user{
+	width: 400px;
+	height: 390px;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-left: -200px;
+	background-color: #FFFFFF;
+	border: 1px solid #DBDCE0;
+	box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+	border-radius: 5px;
+	opacity: 0;
+	display: none;
+}
+.modify-user .modify-user-son:nth-child(1){
+	width: 398px;
+	height: 55px;
+	line-height: 55px;
+	text-align: center;
+	color: #333333;
+	font-family: "微软雅黑";
+	font-size: 18px;
+	border-bottom: 1px solid #E5E5E5;
+}
+.modify-user .modify-user-son:nth-child(1) span{
+	font-family: "微软雅黑";
+	color: #CCC;
+	font-weight: bold;
+	position: relative;
+	left: 129px;
+	top: -10px;
+	cursor: pointer;
+}
+.modify-user .modify-user-son:nth-child(1) span:hover{
+	color: #808080;
+}
+.modify-user .modify-user-son:nth-child(2){
+	width: 400px;
+	height: 200px;
+} 
+.modify-user .modify-user-son:nth-child(2) .left{
+	width: 80px;
+	height: 200px;
+	float: left;
+}
+.modify-user .modify-user-son:nth-child(2) .left .left-son{
+	width: 80px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	margin-top: 10px;
+	font-family: "微软雅黑";
+	font-weight: bold;
+}
+.modify-user .modify-user-son:nth-child(2) .right{
+	width: 300px;
+	height: 200px;
+	float: left;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+.modify-user .modify-user-son:nth-child(2) .right .right-son{
+	width: 300px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	margin-top: 10px;
+	
+}
+.modify-user .modify-user-son:nth-child(2) .right .right-son input{
+	width: 270px;
+	border-radius: 5px;
+	border: 1px solid #CCCCCC;
+}
+.modify-user .modify-user-son:nth-child(2) .right .right-son input:focus{
+    border-color: rgba(82, 168, 236, 0.8);
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+.modify-user .modify-user-son:nth-child(3){
+	widows: 398px;
+	height: 65px;
+	border-top: 1px solid #E5E5E5;
+	margin-top: 68px;
+}
+.modify-user .modify-user-son:nth-child(3) .close{
+	width: 53px;
+	height: 35px;
+	line-height: 35px;
+	margin-top: 15px;
+	text-align: center;
+	border: 1px solid #CCC;
+	color: #333333;
+	background-color: #FFFFFF;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	border-radius: 5px;
+	outline: none;
+	position: relative;
+	left: 229px;
+	top: 0px;
+	cursor: pointer;
+}
+.modify-user .modify-user-son:nth-child(3) .close:hover{
+	background-color: #E6E6E6;
+}
+.modify-user .modify-user-son:nth-child(3) .Submission{
+	width: 85px;
+	height: 35px;
+	line-height: 35px;
+	margin-top: 15px;
+	text-align: center;
+	border: 0;
+	border-radius: 5px;
+	color: #FFFFFF;
+	font-family: "微软雅黑";
+	background-color: #337AB7;
+	cursor: pointer;
+	position: relative;
+	left: 239px;
+	top: 0px;
+	outline: none;
+}
+.modify-user .modify-user-son:nth-child(3) .Submission:hover{
+	background-color: #286090;
+}
+.pagin{
+	width: 900px;
+	height: 40px;
+	margin: auto;
+	margin-top: 20px;
+}
+.pagin .left{
+	width: 450px;
+    height: 40px;
+    float: left;
+     margin-left: 50px;
+}
+ .pagin .right{
+	width: 350px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    margin-left: 50px;
+    color: #FFFFFF;
+}
+nav{
+	display: block;
+}
+nav .pagination{
+	display: inline-block;
+    padding-left: 0;
+    margin: 3px 10px 3px 175px;
+    border-radius: 4px;
+}
+nav .pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover{
+	color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+nav .pagination>li{
+	display: inline;
+}
+nav .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
+	z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+nav .pagination>li>a, .pagination>li>span{
+	position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.sr-only{
+	position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}

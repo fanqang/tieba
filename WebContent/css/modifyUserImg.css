@@ -1,0 +1,77 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.main_div{
+	width: 700px;
+	height: 500px;
+	background-color: #F5F5F5;
+	margin: auto;
+	margin-top: 200px;
+	border-radius: 10px;
+}
+.main_div .title{
+	width: 700px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 22px;
+	font-family: "微软雅黑";
+	text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87;
+}
+.main_div .left{
+	width: 150px;
+	height: 200px;
+	float: left;
+	position: relative;
+	left: 30px;
+}
+.main_div .left .left_son{
+	width: 150px;
+	height: 40px;
+	line-height: 40px;
+	text-align: right;
+	font-family: "微软雅黑";
+	text-shadow: 0 0 0.2em #F87, 0 0 0.2em blueviolet;
+	font-size: 18px;
+}
+.main_div .right{
+	width: 550px;
+	height: 400px;
+	float: left;
+	position: relative;
+	left: 30px;
+}
+.main_div .right .right_son{
+	width: 550px;
+	height: 40px;
+	line-height: 40px;
+	text-align: left;
+	margin-top: 20px;
+}
+.main_div .right .right_son:nth-child(6){
+	width: 90px;
+	height: 90px;
+	background: red;
+	margin-left: 10px;
+	margin-top: -22px;
+	border-radius: 5px;
+}
+.main_div .right .right_son input{
+	width: 300px;
+	height: 38px;
+	border: 1px solid #CCC;
+	margin-left: 10px;
+	border-radius: 5px;
+}
+.main_div .right .right_son button{
+	width: 300px;
+	height: 40px;
+	margin-left: 10px;
+	line-height: 40px;
+	border-radius: 5px;
+	color: #FFFFFF;
+	border: 0;
+	background-color: greenyellow;
+	outline: none;
+}

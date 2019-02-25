@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration>
+	<Properties>
+		<Property name="LOG_HOME">D:/WorkSpace/jee-oxygen/tomcatLog/hrms</Property>
+		<Property name="FILE_NAME">hrms</Property>
+	</Properties>
+    <Appenders>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C{2} (%F:%L) - [%m]%n"/>
+            <!-- 
+            	%-5p 日志级别，占5个字符宽度，左对齐，不足5个字符则在右侧补空格
+            	%d{yyyy-MM-dd HH:mm:ss.SSS} 日期时间（date），大括号用来说明日期格式
+            	%t 线程名称（thread）
+            	%C{2} 类名（Class），占两位，格式为(包名的最后一级目录.类名)，如action.LoginAction
+            	%F 类文件名（File），如LoginAction.java
+            	%L 日志输出语句在java文件中的行数（Line）
+            	%m 日志消息（message）
+            	%n 换行
+            	[] () : . - 均原样输出
+             -->
+        </Console>
+        <RollingRandomAccessFile name="file" fileName="${LOG_HOME}/${FILE_NAME}.log" filePattern="${LOG_HOME}/${FILE_NAME}-%d{yyyy-MM-dd}_%i.log">
+        	<PatternLayout pattern="[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %C{2} (%F:%L) - [%m]%n"/>
+        	<Policies><!-- filePattern属性中的%i表示输出文件的次序，从1开始，是由此处定义的生成新日志文件的政策而产生的 -->
+        		<TimeBasedTriggeringPolicy interval="1" /><!-- interval属性表示时间间隔，其单位由%d{yyyy-MM-dd}日期格式的最后一位决定，此处为每天生成一个新文件 -->
+        		<SizeBasedTriggeringPolicy size="1KB" /><!-- size属性的单位可为KB和MB -->
+        	</Policies>
+        	<DefaultRolloverStrategy max="200" /><!-- 指定最多保存的文件个数 -->
+        </RollingRandomAccessFile>
+    </Appenders>
+    <Loggers>
+    	<!-- 日志级别从低到高分别为 TRACE < DEBUG < INFO < WARN < ERROR < FATAL，如果设置为WARN，则低于WARN的信息都不会输出。 -->
+        <Logger name="org.aopalliance" level="warn"/>
+        <Logger name="org.springframework" level="warn"/>
+        <Logger name="org.hibernate" level="warn"/>
+    	<Logger name="com.pc" level="info"/>
+        <Root level="warn">
+    		<AppenderRef ref="file"/>
+            <AppenderRef ref="STDOUT"/>
+        </Root>
+    </Loggers>
+</Configuration>
